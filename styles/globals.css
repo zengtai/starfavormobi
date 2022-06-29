@@ -1,0 +1,54 @@
+@tailwind base;
+@layer base {
+  body {
+    @apply bg-emerald-900 bg-gradient-to-br bg-fixed from-emerald-800 to-emerald-900;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+
+/*
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
+
+.bg-loading {
+  background-image: url(/images/loading.svg);
+}
+*/
+
+@media (min-width: 300px) {
+  .AdContainer {
+    width: 300px;
+  }
+  .banner {
+    height: 100px;
+  }
+  .banner_sm {
+    height: 50px;
+  }
+  .rectangle {
+    height: 200px;
+  }
+}
+@media (min-width: 468px) {
+  .AdContainer {
+    width: 468px;
+    height: 60px;
+  }
+}
+@media (min-width: 728px) {
+  .AdContainer {
+    width: 728px;
+    height: 90px;
+  }
+}
+@media (min-width: 970px) {
+  .AdContainer {
+    width: 970px;
+    height: 90px;
+  }
+  .banner_lg {
+    height: 250px;
+  }
+}
