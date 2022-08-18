@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import "../public/nprogress.css";
 import * as gtag from "../lib/gtag";
 import { GA_ID } from "../lib/constants";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -35,6 +36,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href={`${router.basePath}/favicon.ico`} />
+      </Head>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

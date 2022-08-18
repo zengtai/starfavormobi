@@ -16,7 +16,6 @@ class MyDocument extends Document {
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
             crossOrigin="anonymous"
           />
-          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <body className="bg-gradient-to-br from-emerald-700 to-emerald-900 bg-fixed">
           <Main />
