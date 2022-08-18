@@ -22,7 +22,7 @@ export default function GamesListByCategory({ games, categories }) {
       <Layout navItems={categories}>
         <Head>
           <title>
-            {categoryName} Games | Play {categoryName} Games on {SITE_META.name}
+            {`${categoryName} Games | Play ${categoryName} Games on ${SITE_META.name}`}
           </title>
         </Head>
 

@@ -2,7 +2,7 @@
 
 Next.js
 
-### StarFavorMobi
+### GoStarFavor
 
 - [x] Adsense code
 - [x] ads.txt
@@ -15,7 +15,7 @@ Next.js
 
 ## game path
 
-`https://uptapapi.uptap.com/h5Game/?type=Game&platform=youletech&appid=`
+`http://uptapapi.uptap.com/h5Game/?type=Game&platform=uptap&appid=`
 
 ## GA
 
