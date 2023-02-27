@@ -4,6 +4,7 @@ import Image from "../components/Image";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Banner from "../components/Banner";
 import { ADS_SLOT_ID } from "../lib/constants";
+import { getImageUrl } from "@/lib/api";
 
 export default function InfiniteList({ games, init = 8, step = 5, group }) {
   // console.log(games.length);
@@ -79,7 +80,7 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                   <Link href={`/game/${game.slug}`}>
                     <a className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
                       <Image
-                        src={game.icon}
+                        src={getImageUrl(game.name)}
                         alt={game.title}
                         width={200}
                         height={200}
@@ -90,13 +91,8 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                         <div className="h-auto w-full text-ellipsis p-2 text-center">
                           <h3 className="leading-4">{game.title}</h3>
                           <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="-ml-1 h-5 w-5"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            <svg className="-ml-1 h-5 w-5">
+                              <use xlinkHref="#__star"></use>
                             </svg>
                             {game.stars}
                           </p>
@@ -112,7 +108,7 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                   <Link href={`/game/${game.slug}`}>
                     <a className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
                       <Image
-                        src={game.icon}
+                        src={getImageUrl(game.name)}
                         alt={game.title}
                         width={200}
                         height={200}
@@ -123,13 +119,8 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                         <div className="h-auto w-full text-ellipsis p-2 text-center">
                           <h3 className="leading-4">{game.title}</h3>
                           <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="-ml-1 h-5 w-5"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            <svg className="-ml-1 h-5 w-5">
+                              <use xlinkHref="#__star"></use>
                             </svg>
                             {game.stars}
                           </p>

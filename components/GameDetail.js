@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "./Image";
 import Link from "next/link";
 import { starIcon } from "./Icons";
+import { getGameUrl, getImageUrl } from "@/lib/api";
 
 export default function GameDetail({ game }) {
   const [isShowAll, setIsShowAll] = useState(false);
@@ -24,7 +25,7 @@ export default function GameDetail({ game }) {
           <div className="aspect-square h-20 w-20 shrink-0 md:h-40 md:w-40">
             <Image
               className="rounded-xl bg-black/5"
-              src={game.icon}
+              src={getImageUrl(game.name)}
               alt={game.title}
               width={100}
               height={100}
@@ -67,7 +68,7 @@ export default function GameDetail({ game }) {
         </div>
       </div>
       <p className="mx-4 py-4 md:pt-2">
-        <Link href={game.url}>
+        <Link href={getGameUrl(game.name)}>
           <a
             className="mx-auto block rounded-full bg-gradient-to-r from-yellow-500 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
