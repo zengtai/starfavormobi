@@ -33,7 +33,7 @@ export default function GamesListByCategory({ games, categories }) {
           responsive="false"
         />
 
-        <div className="grow py-4">
+        <div className="grow py-4 pt-14 md:pt-4">
           <h1 className="px-4 pb-2 text-center text-xl font-semibold text-yellow-100/90 md:pb-3 md:text-3xl">
             {categoryName} Games
           </h1>

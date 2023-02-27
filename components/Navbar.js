@@ -30,7 +30,7 @@ export default function Navbar({ navItems, isOpen }) {
               item.toLowerCase().replace(/ /, "-") == current.slug
                 ? `rounded-full border-white/40 text-white md:scale-125 md:border-0`
                 : `border-transparent text-white/90 md:hover:scale-125`
-            } delay-50 flex flex-row items-center border-2 p-2 pr-3 font-bold drop-shadow transition duration-200 hover:text-white/90 md:justify-center`}
+            } delay-50 flex flex-row items-center whitespace-nowrap border-2 p-2 pr-3 font-bold drop-shadow transition duration-200 hover:text-white/90 md:justify-center`}
           >
             {/* <span className="mr-1.5">{getIcon(item.toLowerCase())}</span> */}
             {item.toLowerCase() == ".io" ? ".IO" : item}

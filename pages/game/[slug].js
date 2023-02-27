@@ -36,7 +36,7 @@ export default function Games({
           responsive="false"
         />
 
-        <div className="relative z-30 grow py-4 md:px-12 md:py-10">
+        <div className="relative z-30 grow py-4 pt-14 md:px-12 md:py-10 md:pt-4">
           <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
               <div className="flex flex-row px-4 pb-3">
