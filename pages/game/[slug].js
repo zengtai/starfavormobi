@@ -122,14 +122,10 @@ export default function Games({
 }
 
 export async function getStaticProps(context) {
-  const categories = await getGames().then((res) => res.categories);
-  let game = await getGameBySlug(`${context.params.slug}`);
+  const data = getGames();
+  const categories = data.categories;
 
-  const relatedGames = await getGames()
-    .then((res) => res.basicData)
-    .then((res) =>
-      res.filter((game) => game.slug !== `${context.params.slug}`)
-    );
+  let { game, relatedGames } = getGameBySlug(`${context.params.slug}`);
 
   return {
     props: {
@@ -143,7 +139,7 @@ export async function getStaticProps(context) {
 }
 
 export const getStaticPaths = async () => {
-  const games = await getGames().then((res) => res.basicData);
+  const games = getGames().basicData;
   const paths = games.map((game) => ({
     params: {
       slug: game.slug.toLowerCase(),

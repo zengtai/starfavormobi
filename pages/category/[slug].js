@@ -52,8 +52,8 @@ export default function GamesListByCategory({ games, categories }) {
 }
 
 export async function getStaticProps(context) {
-  const games = await getGamesByCategory(`${context.params.slug}`);
-  const categories = await getGames().then((res) => res.categories);
+  const games = getGamesByCategory(`${context.params.slug}`);
+  const categories = getGames().categories;
 
   return {
     props: {
@@ -64,12 +64,14 @@ export async function getStaticProps(context) {
 }
 
 export const getStaticPaths = async () => {
-  const categories = await getGames().then((res) => res.categories);
+  const categories = getGames().categories;
   const paths = categories.map((category) => ({
     params: {
       slug:
         category.toLowerCase() == "match 3"
           ? "match-3"
+          : category.toLowerCase() == ".io"
+          ? "io"
           : category.toLowerCase(),
     },
   }));

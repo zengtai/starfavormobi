@@ -68,7 +68,7 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
         hasMore={hasMore}
         loader={<div className="my-2 text-center">Loading...</div>}
       >
-        <ul className="grid grid-cols-4 gap-3 py-3 px-4 md:grid-cols-6 md:gap-6 md:px-12 lg:grid-cols-8 2xl:grid-cols-12">
+        <ul className="grid grid-cols-4 gap-3 py-3 px-4 md:grid-cols-6 md:gap-6 md:px-12 lg:grid-cols-8 2xl:grid-cols-11">
           {scrollGames.map((game, index) => {
             if ((index - 8) % 11 === 0) {
               return (

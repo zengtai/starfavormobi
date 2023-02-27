@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout";
 import { SITE_META } from "../../lib/constants";
-import { getGames } from "../../lib/api";
+// import { getGames } from "../../lib/api";
+import categories from "@/data/categories.json";
 
 export default function Terms({ categories }) {
   return (
@@ -514,11 +515,11 @@ export default function Terms({ categories }) {
 }
 
 export const getStaticProps = async () => {
-  const categories = await getGames().then((res) => res.categories);
+  // const categories = await getGames().then((res) => res.categories);
 
   return {
     props: {
-      categories,
+      categories: categories.data,
     },
   };
 };

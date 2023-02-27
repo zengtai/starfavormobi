@@ -21,5 +21,8 @@ module.exports = {
     // return "20220531";
   },
   trailingSlash: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "development" ? false : true,
+  },
   // assetPrefix: `./`,
 };
