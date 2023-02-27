@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { closeIcon, menuIcon, homeIcon } from "./Icons";
-import { getIcon } from "../components/Icons";
+// import { getIcon } from "../components/Icons";
 
 export default function Navbar({ navItems, isOpen }) {
   const router = useRouter();
@@ -19,7 +19,12 @@ export default function Navbar({ navItems, isOpen }) {
         className={`my-1 basis-1/2 rounded-xl transition duration-500 ease-in-out md:hover:bg-none lg:mx-3 lg:basis-auto`}
         key={item}
       >
-        <Link href={`/category/${item.toLowerCase().replace(/ /, "-")}`}>
+        <Link
+          href={`/category/${item
+            .toLowerCase()
+            .replace(/ /, "-")
+            .replace(/\./, "")}`}
+        >
           <a
             className={`${
               item.toLowerCase().replace(/ /, "-") == current.slug
@@ -28,7 +33,7 @@ export default function Navbar({ navItems, isOpen }) {
             } delay-50 flex flex-row items-center border-2 p-2 pr-3 font-bold drop-shadow transition duration-200 hover:text-white/90 md:justify-center`}
           >
             {/* <span className="mr-1.5">{getIcon(item.toLowerCase())}</span> */}
-            {item.toLowerCase() == "io" ? ".IO" : item}
+            {item.toLowerCase() == ".io" ? ".IO" : item}
           </a>
         </Link>
       </li>

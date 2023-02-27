@@ -58,10 +58,11 @@ export default function Games({
                 <Link
                   href={`/category/${game.category
                     .toLowerCase()
-                    .replace(/ /, "-")}`}
+                    .replace(/ /, "-")
+                    .replace(/\./, "")}`}
                 >
                   <a title={game.category}>
-                    {game.category.toLowerCase() == "io"
+                    {game.category.toLowerCase() == ".io"
                       ? ".IO"
                       : game.category}
                   </a>

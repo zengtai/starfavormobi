@@ -3,7 +3,12 @@ import { getIcon } from "../components/Icons";
 export default function CategoryList({ title, categories, icon }) {
   const categoryList = categories.map((category, index) => (
     <li key={index} className="mx-1 mb-2 capitalize">
-      <Link href={`/category/${category.toLowerCase()}`}>
+      <Link
+        href={`/category/${category
+          .toLowerCase()
+          .replace(/ /, "-")
+          .replace(/\./, "")}`}
+      >
         <a className="flex flex-row rounded-full bg-amber-400 py-2 px-3 text-sm text-white shadow-md shadow-black/10 lg:hover:text-yellow-100">
           <span className="mr-1 drop-shadow">
             {getIcon(`${category.toLowerCase()}`)}

@@ -34,8 +34,8 @@ export default function GamesListByCategory({ games, categories }) {
         />
 
         <div className="grow py-4">
-          <h1 className="px-4 pb-2 text-center text-xl font-semibold capitalize text-yellow-100/90 md:pb-3 md:text-3xl">
-            {categoryName.toLowerCase() == "io" ? ".IO" : categoryName} Games
+          <h1 className="px-4 pb-2 text-center text-xl font-semibold text-yellow-100/90 md:pb-3 md:text-3xl">
+            {categoryName} Games
           </h1>
           <GameList cols="4" games={games} />
         </div>
