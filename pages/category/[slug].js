@@ -35,7 +35,7 @@ export default function GamesListByCategory({ games, categories }) {
 
         <div className="grow py-4">
           <h1 className="px-4 pb-2 text-center text-xl font-semibold capitalize text-yellow-100/90 md:pb-3 md:text-3xl">
-            {categoryName} Games
+            {categoryName.toLowerCase() == "io" ? ".IO" : categoryName} Games
           </h1>
           <GameList cols="4" games={games} />
         </div>
@@ -67,7 +67,10 @@ export const getStaticPaths = async () => {
   const categories = await getGames().then((res) => res.categories);
   const paths = categories.map((category) => ({
     params: {
-      slug: category.toLowerCase(),
+      slug:
+        category.toLowerCase() == "match 3"
+          ? "match-3"
+          : category.toLowerCase(),
     },
   }));
   return {

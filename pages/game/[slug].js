@@ -55,8 +55,16 @@ export default function Games({
                     />
                   </svg>
                 </span>
-                <Link href={`/category/${game.category.toLowerCase()}`}>
-                  <a title={game.category}>{game.category}</a>
+                <Link
+                  href={`/category/${game.category
+                    .toLowerCase()
+                    .replace(/ /, "-")}`}
+                >
+                  <a title={game.category}>
+                    {game.category.toLowerCase() == "io"
+                      ? ".IO"
+                      : game.category}
+                  </a>
                 </Link>
                 <span>
                   <svg

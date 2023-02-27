@@ -36,9 +36,13 @@ export default function GameDetail({ game }) {
               <span>{game.title}</span>
             </h1>
             <p className="uppercase">
-              <Link href={`/category/${game.category.toLowerCase()}`}>
+              <Link
+                href={`/category/${game.category
+                  .toLowerCase()
+                  .replace(/ /, "-")}`}
+              >
                 <a className="rounded-md bg-emerald-600/80 py-1 px-2 text-xs text-emerald-100/90 shadow-md shadow-emerald-500/30">
-                  {game.category}
+                  {game.category.toLowerCase() == "io" ? ".IO" : game.category}
                 </a>
               </Link>
             </p>

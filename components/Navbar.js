@@ -16,19 +16,19 @@ export default function Navbar({ navItems, isOpen }) {
   const categoryNav = navItems.map((item) => {
     return (
       <li
-        className={`my-1 basis-1/2 rounded-xl transition duration-500 ease-in-out sm:basis-1/6 md:basis-1/12 md:hover:bg-none`}
+        className={`my-1 basis-1/2 rounded-xl transition duration-500 ease-in-out md:hover:bg-none lg:mx-3 lg:basis-auto`}
         key={item}
       >
-        <Link href={`/category/${item.toLowerCase()}`}>
+        <Link href={`/category/${item.toLowerCase().replace(/ /, "-")}`}>
           <a
             className={`${
-              item.toLowerCase() == current.slug
+              item.toLowerCase().replace(/ /, "-") == current.slug
                 ? `rounded-full border-white/40 text-white md:scale-125 md:border-0`
                 : `border-transparent text-white/90 md:hover:scale-125`
             } delay-50 flex flex-row items-center border-2 p-2 pr-3 font-bold drop-shadow transition duration-200 hover:text-white/90 md:justify-center`}
           >
-            <span className="mr-1.5">{getIcon(item.toLowerCase())}</span>
-            {item}
+            {/* <span className="mr-1.5">{getIcon(item.toLowerCase())}</span> */}
+            {item.toLowerCase() == "io" ? ".IO" : item}
           </a>
         </Link>
       </li>
@@ -54,7 +54,7 @@ export default function Navbar({ navItems, isOpen }) {
               !isMenuOpen ? `hidden lg:block` : `block`
             } relative z-30 p-3 md:z-10`}
         >
-          <ul className="flex flex-wrap rounded-3xl bg-gradient-to-b from-yellow-500 to-amber-500 py-2 px-2 capitalize shadow-lg shadow-black/20 md:mt-2 lg:flex-nowrap lg:justify-center lg:rounded-full">
+          <ul className="flex flex-wrap rounded-3xl bg-gradient-to-b from-yellow-500 to-amber-500 py-2 px-2 capitalize shadow-lg shadow-black/20 md:mt-2 lg:flex-nowrap lg:justify-center lg:rounded-full lg:pl-16">
             {categoryNav}
           </ul>
         </div>
