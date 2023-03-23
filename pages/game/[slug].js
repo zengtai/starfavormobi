@@ -5,36 +5,26 @@ import dynamic from "next/dynamic";
 import Layout from "../../components/Layout";
 import GameListItem from "../../components/GameListItem";
 import GameDetail from "../../components/GameDetail";
-import { sparkleIcon } from "../../components/Icons";
+import { sparkleIcon, homeIcon, fireIcon } from "../../components/Icons";
 
 import { getGameBySlug, getGames } from "../../lib/api";
 import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
+import AdSense from "@/components/AdSense";
+import AdScript from "@/components/AdScript";
 
-const Banner = dynamic(() => import("../../components/Banner"), {
-  loading: () => <div>Loading...</div>,
-});
+// const Banner = dynamic(() => import("../../components/Banner"), {
+//   loading: () => <div>Loading...</div>,
+// });
 
-export default function Games({
-  game,
-  categories,
-  leftGames,
-  rightGames,
-  bottomGames,
-}) {
+export default function Games({ game, categories, leftGames, rightGames, bottomGames }) {
   return (
     <>
-      <Layout navItems={categories}>
+      <AdScript />
+      <Layout type="detail">
         <Head>
-          <title>
-            {game.title} | Play {game.title} on {SITE_META.name}
-          </title>
+          <title>{`${game.title} | Play ${game.title} on ${SITE_META.NAME}`}</title>
         </Head>
-        <Banner
-          className={`banner mt-14 md:mt-0`}
-          style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
-          responsive="false"
-        />
+        <AdSense slot={ADS_SLOT_ID.DETAIL} />
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,27 +48,18 @@ export default function Games({
             />
           </svg>
         </div>
-        <div className="relative z-30 grow py-4 pt-14 md:px-12 md:py-10 md:pt-4">
+        <div className="relative z-30 grow py-4 md:px-12 md:py-10 ">
           <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
-              <div className="flex flex-row items-center px-4 pb-3 text-xs">
+              <div className="hidden flex-row items-center px-4 pb-3 text-xs text-gray-600 xl:flex">
                 <Link href={`/`}>Home</Link>
                 <span>
                   <svg className="h-5 w-5">
                     <use xlinkHref="#__arr_r"></use>
                   </svg>
                 </span>
-                <Link
-                  href={`/category/${game.category
-                    .toLowerCase()
-                    .replace(/ /, "-")
-                    .replace(/\./, "")}`}
-                >
-                  <a title={game.category}>
-                    {game.category.toLowerCase() == ".io"
-                      ? ".IO"
-                      : game.category}
-                  </a>
+                <Link href={`/category/${game.category.slug}`} title={game.category.name}>
+                  {game.category.name}
                 </Link>
                 <span>
                   <svg className="h-5 w-5">
@@ -89,61 +70,54 @@ export default function Games({
               </div>
               <GameDetail game={game} />
             </div>
-            <h3 className="flex flex-row px-4 text-lg font-semibold text-yellow-100/70 xl:sr-only">
-              <span className="mr-1 text-yellow-500">{sparkleIcon()}</span>
-              You may also like
+            <h3 className="flex flex-row px-4 text-lg font-semibold text-gray-700 xl:sr-only">
+              <span className="mr-1 text-gray-700">{fireIcon()}</span>
+              Popular Games
             </h3>
-            <div className="xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1 ">
-              <ul className="grid grid-cols-5 gap-3 px-4 md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-2">
-                {/* <CustomGameList games={leftGames} /> */}
-                <GameListItem games={leftGames} />
+            {/* <div className="xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1 ">
+              <ul className="grid grid-cols-4 gap-3 px-4 md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-2">
+                {leftGames.map((i) => (
+                  <GameListItem key={i.slug} game={i} />
+                ))}
               </ul>
             </div>
             <div className="xl:col-span-2 xl:col-start-11 xl:row-span-5 xl:row-start-1">
-              <ul className="grid grid-cols-5 gap-3 px-4 md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-2">
-                {/* <CustomGameList games={rightGames} /> */}
-                <GameListItem games={rightGames} />
+              <ul className="grid grid-cols-4 gap-3 px-4 md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-2">
+                {rightGames.map((i) => (
+                  <GameListItem key={i.slug} game={i} />
+                ))}
               </ul>
-            </div>
+            </div> */}
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
-              <ul className="grid grid-cols-5 gap-3 px-4 md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-8">
-                {/* <CustomGameList games={bottomGames} /> */}
-                <GameListItem games={bottomGames} />
+              <ul className="grid grid-cols-4 gap-3 px-4 text-white md:grid-cols-10 md:gap-6 md:px-0 xl:grid-cols-8">
+                {bottomGames.map((i) => (
+                  <GameListItem key={i.slug} game={i} />
+                ))}
               </ul>
             </div>
           </div>
         </div>
-
-        <Banner
-          className={`banner rectangle`}
-          style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
-          responsive="false"
-        />
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps(context) {
-  const data = getGames();
-  const categories = data.categories;
-
-  let { game, relatedGames } = getGameBySlug(`${context.params.slug}`);
+  let { game, relatedGames } = await getGameBySlug(`${context.params.slug}`);
 
   return {
     props: {
       game: game[0],
-      categories,
-      rightGames: relatedGames.slice(0, 10),
-      leftGames: relatedGames.slice(11, 21),
+
+      // rightGames: relatedGames.slice(0, 10),
+      // leftGames: relatedGames.slice(11, 21),
       bottomGames: relatedGames.slice(22, 38),
     },
   };
 }
 
 export const getStaticPaths = async () => {
-  const games = getGames().basicData;
+  const games = await getGames().then((res) => res.basicData);
   const paths = games.map((game) => ({
     params: {
       slug: game.slug.toLowerCase(),

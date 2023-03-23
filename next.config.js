@@ -1,8 +1,9 @@
 module.exports = {
   images: {
-    loader: "custom",
-    domains: ["cdn.iwantalipstick.com"],
-    disableStaticImages: true,
+    // loader: "custom",
+    // domains: ["cdn.iwantalipstick.com"],
+    // disableStaticImages: true,
+    unoptimized: true,
   },
   reactStrictMode: true,
   swcMinify: true,

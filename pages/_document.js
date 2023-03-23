@@ -10,14 +10,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
-            crossOrigin="anonymous"
-          />
-        </Head>
-        <body className="bg-gradient-to-br from-emerald-700 to-emerald-900 bg-fixed">
+        <Head />
+
+        <body>
           <Main />
           <NextScript />
         </body>

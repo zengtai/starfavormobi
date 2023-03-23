@@ -9,6 +9,12 @@ Next.js
 - [x] GA code
 - [x] ads code in position
 
+## Updated
+
+### 20230322
+
+升级依赖到最新版
+
 ## output
 
 ``

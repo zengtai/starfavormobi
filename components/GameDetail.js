@@ -1,8 +1,11 @@
 import { useState } from "react";
-import Image from "./Image";
+// import Image from "./Image";
+import Image from "next/image";
 import Link from "next/link";
 import { starIcon } from "./Icons";
-import { getGameUrl, getImageUrl } from "@/lib/api";
+
+import getGameUrl from "@/utils/getGameUrl";
+import getImageUrl from "@/utils/getImageUrl";
 
 export default function GameDetail({ game }) {
   const [isShowAll, setIsShowAll] = useState(false);
@@ -12,40 +15,34 @@ export default function GameDetail({ game }) {
 
   const handleClick = () => {
     if (typeof window !== "undefined") {
-      let currentPlayedGames =
-        JSON.parse(localStorage.getItem("playedGames")) || [];
+      let currentPlayedGames = JSON.parse(localStorage.getItem("playedGames")) || [];
       currentPlayedGames.push(game.slug);
       localStorage.setItem("playedGames", JSON.stringify(currentPlayedGames));
     }
   };
   return (
     <>
-      <div className="mx-4 flex flex-row flex-wrap items-center rounded-[2rem] border-8 border-sky-100 bg-white p-4 text-emerald-700 shadow-lg shadow-black/10 md:mx-0 md:items-start md:p-5">
+      <div className="mx-4 flex flex-row flex-wrap items-center text-gray-700 md:mx-0 md:items-start md:p-5">
         <div className="flex space-x-3 md:space-x-6">
-          <div className="aspect-square h-20 w-20 shrink-0 md:h-40 md:w-40">
+          <div className="">
             <Image
-              className="rounded-xl bg-black/5"
+              className="h-20 w-20 shrink-0 rounded-xl bg-black/5 md:h-40 md:w-40"
               src={getImageUrl(game.name)}
               alt={game.title}
               width={100}
               height={100}
-              layout={`responsive`}
             />
           </div>
           <div>
-            <h1 className="pb-2 text-xl font-semibold md:text-3xl">
+            <h1 className="pb-2 text-xl font-semibold md:text-4xl">
               <span>{game.title}</span>
             </h1>
             <p className="uppercase">
               <Link
-                href={`/category/${game.category
-                  .toLowerCase()
-                  .replace(/ /, "-")
-                  .replace(/\./, "")}`}
+                href={`/category/${game.category.slug}`}
+                className="rounded-md border border-gray-200 py-1 px-1.5 text-xs text-gray-400"
               >
-                <a className="rounded-md bg-emerald-600/80 py-1 px-2 text-xs text-emerald-100/90 shadow-md shadow-emerald-500/30">
-                  {game.category.toLowerCase() == "io" ? ".IO" : game.category}
-                </a>
+                {game.category.name}
               </Link>
             </p>
             <p className="mt-3 flex flex-row items-center justify-center space-x-2 md:justify-start xl:space-x-3">
@@ -57,27 +54,26 @@ export default function GameDetail({ game }) {
             </p>
           </div>
         </div>
+        <p className="w-full py-4 md:pt-2">
+          <Link
+            href={getGameUrl(game.name)}
+            className="mx-auto block w-full rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-lg shadow-orange-400/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+            title={`Play ${game.title} now`}
+            onClick={handleClick}
+          >
+            PLAY NOW
+          </Link>
+        </p>
         <div
           onClick={toggle}
           className={`
             ${
               isShowAll ? `h-auto` : `max-h-16`
-            } relative w-full overflow-hidden text-ellipsis py-3 text-slate-500 after:absolute after:left-0 after:bottom-0 after:h-5 after:w-full after:bg-gradient-to-t after:from-white after:to-white/0`}
+            } relative w-full overflow-hidden text-ellipsis py-3 text-sm text-slate-500 after:absolute after:left-0 after:bottom-0 after:h-5 after:w-full after:bg-gradient-to-t after:from-white after:to-white/0`}
         >
           {game.description}
         </div>
       </div>
-      <p className="mx-4 py-4 md:pt-2">
-        <Link href={getGameUrl(game.name)}>
-          <a
-            className="mx-auto block rounded-full bg-gradient-to-r from-yellow-500 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
-            title={`Play ${game.title} now`}
-            onClick={handleClick}
-          >
-            PLAY NOW
-          </a>
-        </Link>
-      </p>
     </>
   );
 }

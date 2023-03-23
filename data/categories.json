@@ -1,16 +1,16 @@
 {
   "data": [
-    "Puzzle",
-    "Adventure",
-    "Strategy",
-    "Sports",
-    "Arcade",
-    "Match 3",
-    "Simulation",
-    "Shooting",
-    "Racing",
-    ".IO",
-    "Casual",
-    "Girl"
+    { "name": "Puzzle", "slug": "puzzle" },
+    { "name": "Arcade", "slug": "arcade" },
+    { "name": "Adventure", "slug": "adventure" },
+    { "name": "Sports", "slug": "sports" },
+    { "name": "Strategy", "slug": "strategy" },
+    { "name": "Simulation", "slug": "simulation" },
+    { "name": "Match 3", "slug": "match-3" },
+    { "name": "Racing", "slug": "racing" },
+    { "name": "Shooting", "slug": "shooting" },
+    { "name": ".IO", "slug": "io" },
+    { "name": "Casual", "slug": "casual" },
+    { "name": "Girl", "slug": "girl" }
   ]
 }

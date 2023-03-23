@@ -3,7 +3,7 @@ import Script from "next/script";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import "../styles/globals.css";
-import "../public/nprogress.css";
+import "../styles/nprogress.css";
 import * as gtag from "../lib/gtag";
 import { GA_ID } from "../lib/constants";
 import Head from "next/head";
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href={`${router.basePath}/favicon.ico`} />
+        <link rel="shortcut icon" href={`${router.basePath || ``}/favicon.ico`} />
       </Head>
       <Script
         strategy="afterInteractive"
