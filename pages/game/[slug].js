@@ -19,12 +19,12 @@ import AdScript from "@/components/AdScript";
 export default function Games({ game, categories, leftGames, rightGames, bottomGames }) {
   return (
     <>
-      <AdScript />
       <Layout type="detail">
         <Head>
           <title>{`${game.title} | Play ${game.title} on ${SITE_META.NAME}`}</title>
         </Head>
-        <AdSense slot={ADS_SLOT_ID.DETAIL} />
+        <AdScript />
+        <AdSense slot={ADS_SLOT_ID.DETAIL} key={`${game.slug}-${Math.random()}}`} />
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"

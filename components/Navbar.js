@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { closeIcon, menuIcon, homeIcon } from "./Icons";
 import Image from "next/image";
@@ -20,6 +20,16 @@ export default function Navbar({ navItems, isOpen }) {
   console.log(`router`, router);
   const isDetail = router.pathname === "/game/[slug]";
   // navItems.sort((a, b) => (a > b ? 1 : -1));
+
+  useEffect(() => {
+    function handleStart() {
+      setOpen(false);
+    }
+    router.events.on("routeChangeStart", handleStart);
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+    };
+  }, [router.events, isMenuOpen]);
 
   const categoryNav = categories.data.map((item) => {
     return (
@@ -48,15 +58,17 @@ export default function Navbar({ navItems, isOpen }) {
     <>
       <nav>
         <div className={`z-10 mx-auto mt-8 flex items-center justify-between xl:mt-0`}>
-          <Link href={`/`} passHref className="ml-4 flex items-center text-white xl:ml-12">
-            <Image src={Logo} className={`w-8 xl:block xl:w-14`} alt={SITE_META.NAME} />
-            {/* <Image src={Logo_white} className={`ml-3 xl:hidden`} alt={SITE_META.NAME} /> */}
-            <span
-              className={`${isDetail ? `text-orange-400` : `text-white`} ml-2 text-base
+          <Link href={`/`} className="ml-4 flex items-center text-white xl:ml-12">
+            <>
+              <Image src={Logo} className={`w-8 xl:block xl:w-14`} alt={SITE_META.NAME} />
+              {/* <Image src={Logo_white} className={`ml-3 xl:hidden`} alt={SITE_META.NAME} /> */}
+              <span
+                className={`${isDetail ? `text-orange-400` : `text-white`} ml-2 text-base
                 font-bold xl:text-xl`}
-            >
-              Starfavor
-            </span>
+              >
+                Starfavor
+              </span>
+            </>
           </Link>
           <button
             onClick={toggle}

@@ -20,6 +20,7 @@ import dynamic from "next/dynamic";
 import SectionTitle from "@/components/SectionTitle";
 import AdSense from "@/components/AdSense";
 import GameListItem from "@/components/GameListItem";
+import AdScript from "@/components/AdScript";
 
 // const Banner = dynamic(() => import("../components/Banner"), {
 //   loading: () => <div>Loading...</div>,
@@ -53,6 +54,7 @@ export default function Home({
         <Head>
           <title>{`${SITE_META.NAME} | Play Free Games Online`}</title>
         </Head>
+        <AdScript />
         <div className="relative z-30 grow">
           <div className="hidden">
             <svg
@@ -65,7 +67,7 @@ export default function Home({
             </svg>
           </div>
 
-          <AdSense slot={ADS_SLOT_ID.HOME} />
+          <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} />
 
           <div className="xl:mx-8">
             <GameList
