@@ -57,7 +57,7 @@ export default function GameDetail({ game }) {
         <p className="w-full py-4 md:pt-2">
           <Link
             href={getGameUrl(game.name)}
-            className="mx-auto block w-full rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-lg shadow-orange-400/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+            className="mx-auto block w-full rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-lg shadow-orange-400/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
             onClick={handleClick}
           >
