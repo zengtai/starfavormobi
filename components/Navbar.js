@@ -35,7 +35,7 @@ export default function Navbar({ navItems, isOpen }) {
                   isDetail ? `text-gray-300` : `text-white`
                 } md:scale-125 md:border-0`
               : `border-transparent ${
-                  isDetail ? `text-gray-500` : `text-white/90 drop-shadow`
+                  isDetail ? `text-gray-300 xl:text-gray-500` : `text-white/90 drop-shadow`
                 } md:hover:scale-125`
           } delay-50 flex flex-row items-center whitespace-nowrap border-2 p-2 pr-3 font-bold transition duration-200  md:justify-center`}
         >
