@@ -14,7 +14,7 @@ export default function Layout({ title, navItems, children, isOpen }) {
           content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height"
         />
         <title>
-          {title} | {SITE_META.name}
+          {title} | {SITE_META.NAME}
         </title>
       </Head>
 

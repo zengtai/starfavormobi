@@ -14,25 +14,19 @@ const Banner = dynamic(() => import("../../components/Banner"), {
   loading: () => <div>Loading...</div>,
 });
 
-export default function Games({
-  game,
-  categories,
-  leftGames,
-  rightGames,
-  bottomGames,
-}) {
+export default function Games({ game, categories, leftGames, rightGames, bottomGames }) {
   return (
     <>
       <Layout navItems={categories}>
         <Head>
           <title>
-            {game.title} | Play {game.title} on {SITE_META.name}
+            {game.title} | Play {game.title} on {SITE_META.NAME}
           </title>
         </Head>
         <Banner
           className={`banner mt-14 md:mt-0`}
           style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
+          slot={ADS_SLOT_ID.DETAIL}
           responsive="false"
         />
         <div className="hidden">
@@ -69,16 +63,13 @@ export default function Games({
                   </svg>
                 </span>
                 <Link
+                  title={game.category}
                   href={`/category/${game.category
                     .toLowerCase()
                     .replace(/ /, "-")
                     .replace(/\./, "")}`}
                 >
-                  <a title={game.category}>
-                    {game.category.toLowerCase() == ".io"
-                      ? ".IO"
-                      : game.category}
-                  </a>
+                  {game.category.toLowerCase() == ".io" ? ".IO" : game.category}
                 </Link>
                 <span>
                   <svg className="h-5 w-5">
@@ -117,7 +108,7 @@ export default function Games({
         <Banner
           className={`banner rectangle`}
           style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
+          slot={ADS_SLOT_ID.DETAIL}
           responsive="false"
         />
       </Layout>

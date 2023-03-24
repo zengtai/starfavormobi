@@ -13,10 +13,8 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
   // data = data.reverse();
 
   const initGames =
-    typeof window !== "undefined" &&
-    localStorage.getItem(`scrollGames${group}`) != null
-      ? JSON.parse(localStorage.getItem(`scrollGames${group}`)).games ||
-        data.slice(0, init)
+    typeof window !== "undefined" && localStorage.getItem(`scrollGames${group}`) != null
+      ? JSON.parse(localStorage.getItem(`scrollGames${group}`)).games || data.slice(0, init)
       : data.slice(0, init);
 
   const total = data.length;
@@ -25,10 +23,7 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
   const [hasMore, setHasMore] = useState(true);
 
   const getMoreGames = () => {
-    const newScrollGames = data.slice(
-      scrollGames.length,
-      scrollGames.length + step
-    );
+    const newScrollGames = data.slice(scrollGames.length, scrollGames.length + step);
 
     setScrollGames((game) => [...game, ...newScrollGames]);
 
@@ -73,18 +68,17 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
           {scrollGames.map((game, index) => {
             if ((index - 8) % 11 === 0) {
               return (
-                <li
-                  key={game.id}
-                  className={`col-span-2 row-span-2 md:col-auto md:row-auto`}
-                >
-                  <Link href={`/game/${game.slug}`}>
-                    <a className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+                <li key={game.id} className={`col-span-2 row-span-2 md:col-auto md:row-auto`}>
+                  <Link
+                    href={`/game/${game.slug}`}
+                    className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110"
+                  >
+                    <>
                       <Image
                         src={getImageUrl(game.name)}
                         alt={game.title}
                         width={200}
                         height={200}
-                        layout="responsive"
                         className="w-full bg-loading bg-center bg-no-repeat"
                       />
                       <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
@@ -98,21 +92,23 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </>
                   </Link>
                 </li>
               );
             } else {
               return (
                 <li key={game.id}>
-                  <Link href={`/game/${game.slug}`}>
-                    <a className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+                  <Link
+                    href={`/game/${game.slug}`}
+                    className="md:delay-50 duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110"
+                  >
+                    <>
                       <Image
                         src={getImageUrl(game.name)}
                         alt={game.title}
                         width={200}
                         height={200}
-                        layout="responsive"
                         className="w-full bg-loading bg-center bg-no-repeat"
                       />
                       <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
@@ -126,7 +122,7 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </>
                   </Link>
                 </li>
               );
@@ -138,16 +134,11 @@ export default function InfiniteList({ games, init = 8, step = 5, group }) {
             <Banner
               className={`banner`}
               style={{ display: "block" }}
-              slot={ADS_SLOT_ID.home}
+              slot={ADS_SLOT_ID.HOME}
               responsive="false"
             />
           ) : (
-            <Banner
-              style={{ display: "block" }}
-              slot={ADS_SLOT_ID.home}
-              responsive="true"
-              auto
-            />
+            <Banner style={{ display: "block" }} slot={ADS_SLOT_ID.HOME} responsive="true" auto />
           )
         ) : null}
       </InfiniteScroll>

@@ -7,8 +7,11 @@ export default function GameListItem({ games, className, isPriority }) {
     <>
       {games.map((game, index) => (
         <li key={game.id} className={className}>
-          <Link href={`/game/${game.slug}`}>
-            <a className="lg:delay-50 lg:duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 lg:transition lg:ease-in-out lg:hover:origin-bottom lg:hover:scale-110 lg:hover:shadow-lg lg:hover:shadow-black/40">
+          <Link
+            href={`/game/${game.slug}`}
+            className="lg:delay-50 lg:duration-400 group relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 lg:transition lg:ease-in-out lg:hover:origin-bottom lg:hover:scale-110 lg:hover:shadow-lg lg:hover:shadow-black/40"
+          >
+            <>
               {isPriority && index < 6 ? (
                 <Image
                   src={getImageUrl(game.name)}
@@ -16,7 +19,6 @@ export default function GameListItem({ games, className, isPriority }) {
                   width={200}
                   height={200}
                   className="w-full bg-loading bg-center bg-no-repeat"
-                  layout="responsive"
                   priority
                 />
               ) : (
@@ -26,7 +28,6 @@ export default function GameListItem({ games, className, isPriority }) {
                   width={200}
                   height={200}
                   className="w-full bg-loading bg-center bg-no-repeat"
-                  layout="responsive"
                 />
               )}
               <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold sm:flex lg:group-hover:bottom-0 lg:group-hover:bg-gradient-to-t lg:group-hover:from-black lg:group-hover:to-black/0">
@@ -40,7 +41,7 @@ export default function GameListItem({ games, className, isPriority }) {
                   </p>
                 </div>
               </div>
-            </a>
+            </>
           </Link>
         </li>
       ))}

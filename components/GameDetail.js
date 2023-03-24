@@ -12,8 +12,7 @@ export default function GameDetail({ game }) {
 
   const handleClick = () => {
     if (typeof window !== "undefined") {
-      let currentPlayedGames =
-        JSON.parse(localStorage.getItem("playedGames")) || [];
+      let currentPlayedGames = JSON.parse(localStorage.getItem("playedGames")) || [];
       currentPlayedGames.push(game.slug);
       localStorage.setItem("playedGames", JSON.stringify(currentPlayedGames));
     }
@@ -29,7 +28,6 @@ export default function GameDetail({ game }) {
               alt={game.title}
               width={100}
               height={100}
-              layout={`responsive`}
             />
           </div>
           <div>
@@ -38,14 +36,13 @@ export default function GameDetail({ game }) {
             </h1>
             <p className="uppercase">
               <Link
+                className="rounded-md bg-emerald-600/80 py-1 px-2 text-xs text-emerald-100/90 shadow-md shadow-emerald-500/30"
                 href={`/category/${game.category
                   .toLowerCase()
                   .replace(/ /, "-")
                   .replace(/\./, "")}`}
               >
-                <a className="rounded-md bg-emerald-600/80 py-1 px-2 text-xs text-emerald-100/90 shadow-md shadow-emerald-500/30">
-                  {game.category.toLowerCase() == "io" ? ".IO" : game.category}
-                </a>
+                {game.category.toLowerCase() == "io" ? ".IO" : game.category}
               </Link>
             </p>
             <p className="mt-3 flex flex-row items-center justify-center space-x-2 md:justify-start xl:space-x-3">
@@ -68,14 +65,13 @@ export default function GameDetail({ game }) {
         </div>
       </div>
       <p className="mx-4 py-4 md:pt-2">
-        <Link href={getGameUrl(game.name)}>
-          <a
-            className="mx-auto block rounded-full bg-gradient-to-r from-yellow-500 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
-            title={`Play ${game.title} now`}
-            onClick={handleClick}
-          >
-            PLAY NOW
-          </a>
+        <Link
+          href={getGameUrl(game.name)}
+          className="mx-auto block rounded-full bg-gradient-to-r from-yellow-500 to-orange-400 p-3 text-center text-lg font-bold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+          title={`Play ${game.title} now`}
+          onClick={handleClick}
+        >
+          PLAY NOW
         </Link>
       </p>
     </>

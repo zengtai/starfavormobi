@@ -1,12 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import {
-  fireIcon,
-  topIcon,
-  gameIcon,
-  categoryIcon,
-  historyIcon,
-} from "../components/Icons";
+import { fireIcon, topIcon, gameIcon, categoryIcon, historyIcon } from "../components/Icons";
 import { getGames } from "../lib/api";
 
 import Layout from "../components/Layout";
@@ -33,9 +27,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     if (typeof window !== "undefined") {
       let playedGames = JSON.parse(localStorage.getItem("playedGames")) || [];
       if (playedGames.length) {
-        playedGamesBySlug = games.filter((game) =>
-          playedGames.includes(game.slug)
-        );
+        playedGamesBySlug = games.filter((game) => playedGames.includes(game.slug));
         setPlayedGames(() => playedGamesBySlug);
       }
     }
@@ -45,7 +37,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     <>
       <Layout navItems={categories}>
         <Head>
-          <title>{SITE_META.name} | Play Free Games Online</title>
+          <title>{SITE_META.NAME} | Play Free Games Online</title>
         </Head>
         <div className="relative z-30 grow pt-12 md:pt-0">
           <div className="hidden">
@@ -70,7 +62,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <Banner
             className={`banner`}
             style={{ display: "block" }}
-            slot={ADS_SLOT_ID.home}
+            slot={ADS_SLOT_ID.HOME}
             responsive="false"
           />
 
@@ -85,18 +77,12 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           ) : null}
 
-          <GameList
-            icon={topIcon()}
-            games={newGames}
-            title="New Games"
-            isPriority
-            cols="5"
-          />
+          <GameList icon={topIcon()} games={newGames} title="New Games" isPriority cols="5" />
 
           <Banner
             className={`banner rectangle`}
             style={{ display: "block" }}
-            slot={ADS_SLOT_ID.home}
+            slot={ADS_SLOT_ID.HOME}
             responsive="false"
           />
 
@@ -107,60 +93,21 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             </span>
           </h2>
 
-          <InfiniteList
-            games={games.slice(0, 22)}
-            init={4}
-            step={9}
-            group={1}
-          />
+          <InfiniteList games={games.slice(0, 22)} init={4} step={9} group={1} />
 
-          <InfiniteList
-            games={games.slice(22, 44)}
-            init={0}
-            step={4}
-            group={2}
-          />
+          <InfiniteList games={games.slice(22, 44)} init={0} step={4} group={2} />
 
-          <InfiniteList
-            games={games.slice(44, 66)}
-            init={0}
-            step={4}
-            group={3}
-          />
+          <InfiniteList games={games.slice(44, 66)} init={0} step={4} group={3} />
 
-          <InfiniteList
-            games={games.slice(66, 88)}
-            init={0}
-            step={4}
-            group={4}
-          />
+          <InfiniteList games={games.slice(66, 88)} init={0} step={4} group={4} />
 
-          <InfiniteList
-            games={games.slice(88, 110)}
-            init={0}
-            step={4}
-            group={5}
-          />
+          <InfiniteList games={games.slice(88, 110)} init={0} step={4} group={5} />
 
-          <InfiniteList
-            games={games.slice(110, 132)}
-            init={0}
-            step={4}
-            group={6}
-          />
+          <InfiniteList games={games.slice(110, 132)} init={0} step={4} group={6} />
 
-          <InfiniteList
-            id="group7"
-            games={games.slice(132)}
-            init={0}
-            group={7}
-          />
+          <InfiniteList id="group7" games={games.slice(132)} init={0} group={7} />
 
-          <CategoryList
-            icon={categoryIcon()}
-            title="Categories"
-            categories={categories}
-          />
+          <CategoryList icon={categoryIcon()} title="Categories" categories={categories} />
         </div>
       </Layout>
     </>
@@ -173,9 +120,7 @@ export const getStaticProps = async () => {
   const games = data.basicData;
 
   const newGames = games.slice(0, 20);
-  const featuredGames = games.filter((game) =>
-    FEATURED_GAMES.includes(game.name)
-  );
+  const featuredGames = games.filter((game) => FEATURED_GAMES.includes(game.name));
   const categories = data.categories;
 
   return {

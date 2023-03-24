@@ -22,7 +22,7 @@ export default function GamesListByCategory({ games, categories }) {
       <Layout navItems={categories}>
         <Head>
           <title>
-            {categoryName} Games | Play {categoryName} Games on {SITE_META.name}
+            {categoryName} Games | Play {categoryName} Games on {SITE_META.NAME}
           </title>
         </Head>
         <div className="hidden">
@@ -38,7 +38,7 @@ export default function GamesListByCategory({ games, categories }) {
         <Banner
           className={`banner mt-14 md:mt-0`}
           style={{ display: "block" }}
-          slot={ADS_SLOT_ID.category}
+          slot={ADS_SLOT_ID.CATEGORY}
           responsive="false"
         />
 
@@ -52,7 +52,7 @@ export default function GamesListByCategory({ games, categories }) {
         <Banner
           className={`banner rectangle`}
           style={{ display: "block" }}
-          slot={ADS_SLOT_ID.category}
+          slot={ADS_SLOT_ID.CATEGORY}
           responsive="false"
         />
       </Layout>
