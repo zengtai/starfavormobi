@@ -8,6 +8,7 @@ module.exports = {
       backgroundImage: {
         loading: "url('../public/images/loading.svg')",
         text: "url('../public/images/ele.svg')",
+        btn: "url('../public/images/btn.png')",
       },
     },
   },
