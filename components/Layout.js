@@ -13,9 +13,7 @@ export default function Layout({ title, navItems, children, isOpen }) {
           name="viewport"
           content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height"
         />
-        <title>
-          {title} | {SITE_META.NAME}
-        </title>
+        <title>{`${title} | ${SITE_META.NAME}`}</title>
       </Head>
 
       <Navbar isOpen={isOpen} navItems={navItems} />

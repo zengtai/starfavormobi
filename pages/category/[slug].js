@@ -21,9 +21,7 @@ export default function GamesListByCategory({ games, categories }) {
     <>
       <Layout navItems={categories}>
         <Head>
-          <title>
-            {categoryName} Games | Play {categoryName} Games on {SITE_META.NAME}
-          </title>
+          <title>{`${categoryName} Games | Play ${categoryName} Games on ${SITE_META.NAME}`}</title>
         </Head>
         <div className="hidden">
           <svg

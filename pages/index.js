@@ -37,7 +37,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     <>
       <Layout navItems={categories}>
         <Head>
-          <title>{SITE_META.NAME} | Play Free Games Online</title>
+          <title>{`${SITE_META.NAME} | Play Free Games Online`}</title>
         </Head>
         <div className="relative z-30 grow pt-12 md:pt-0">
           <div className="hidden">

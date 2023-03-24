@@ -19,9 +19,7 @@ export default function Games({ game, categories, leftGames, rightGames, bottomG
     <>
       <Layout navItems={categories}>
         <Head>
-          <title>
-            {game.title} | Play {game.title} on {SITE_META.NAME}
-          </title>
+          <title>{`${game.title} | Play ${game.title} on ${SITE_META.NAME}`}</title>
         </Head>
         <Banner
           className={`banner mt-14 md:mt-0`}
