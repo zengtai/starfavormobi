@@ -7,11 +7,8 @@ module.exports = {
   },
   reactStrictMode: true,
   swcMinify: true,
-  basePath: "/tmp", // 演示 2023.3.24
-  // basePath: "/webs/youle_1", // youle_1 2022.05.24
+  // basePath: "/tmp", // 演示 2023.3.24
 
-  // basePath: "/webs/youle_2", // youle_2 2022.05.30
-  // basePath: "/webs/youle_3", // youle_2 2022.05.31
   // distDir: "build",
 
   generateBuildId: async () => {
