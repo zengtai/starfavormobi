@@ -7,8 +7,8 @@ export default function Terms() {
   return (
     <>
       <Layout title={`Terms of Use`}>
-        <div className="p-4 md:p-8 xl:mx-auto xl:w-[1120px]">
-          <h1 className="pb-3 text-2xl font-bold text-white/80">Terms of Use</h1>
+        <div className="p-4 text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px]">
+          <h1 className="pb-3 text-2xl font-bold">Terms of Use</h1>
           <p className="my-2">
             The {SITE_META.NAME} website located at {SITE_META.URL} is a copyrighted work belonging
             to {SITE_META.NAME}. Certain features of the Site may be subject to additional

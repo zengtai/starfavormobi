@@ -6,8 +6,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Layout title={`Privacy Policy`}>
-        <div className="p-4 md:p-8 xl:mx-auto xl:w-[1120px]">
-          <h1 className="pb-3 text-2xl font-bold text-white/80">Privacy Policy</h1>
+        <div className="p-4 text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px]">
+          <h1 className="pb-3 text-2xl font-bold">Privacy Policy</h1>
           <p className="my-2">
             At {SITE_META.NAME}, accessible from {SITE_META.URL}, one of our main priorities is the
             privacy of our visitors. This Privacy Policy document contains types of information that
