@@ -35,18 +35,18 @@ export default function Home({
   featuredGames,
   // allData
 }) {
-  const [playedGames, setPlayedGames] = useState();
   // console.log(`allData: `, JSON.stringify(allData.games));
-  useEffect(() => {
-    let playedGamesBySlug;
-    if (typeof window !== "undefined") {
-      let playedGames = JSON.parse(localStorage.getItem("playedGames")) || [];
-      if (playedGames.length) {
-        playedGamesBySlug = data.data.filter((game) => playedGames.includes(game.slug));
-        setPlayedGames(() => playedGamesBySlug);
-      }
-    }
-  }, [data]);
+  // const [playedGames, setPlayedGames] = useState();
+  // useEffect(() => {
+  //   let playedGamesBySlug;
+  //   if (typeof window !== "undefined") {
+  //     let playedGames = JSON.parse(localStorage.getItem("playedGames")) || [];
+  //     if (playedGames.length) {
+  //       playedGamesBySlug = data.filter((game) => playedGames.includes(game.slug));
+  //       setPlayedGames(() => playedGamesBySlug);
+  //     }
+  //   }
+  // }, [data]);
 
   return (
     <>
@@ -80,7 +80,7 @@ export default function Home({
             />
           </div>
 
-          <div className="xl:mx-8">
+          {/* <div className="xl:mx-8">
             {playedGames ? (
               <>
                 <PlayedList
@@ -93,7 +93,7 @@ export default function Home({
                 />
               </>
             ) : null}
-          </div>
+          </div> */}
 
           <div className="grid gap-x-8 xl:mx-8 xl:mb-8 xl:grid-cols-3">
             {data
