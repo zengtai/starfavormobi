@@ -16,7 +16,11 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
     @apply bg-emerald-900 bg-gradient-to-br from-emerald-800 to-emerald-900 bg-fixed;
   }
 } */
+html,
+body {
+  @apply bg-orange-500;
+}
 .wrapper {
   /* background-size: 100%; */
-  @apply flex min-h-screen flex-col bg-contain bg-no-repeat text-sm;
+  @apply relative flex min-h-screen flex-col bg-contain bg-no-repeat text-sm;
 }

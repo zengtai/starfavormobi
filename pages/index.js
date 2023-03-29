@@ -1,22 +1,33 @@
 import Head from "next/head";
-import { Fragment, useEffect, useState } from "react";
+import {
+  Fragment,
+  // useEffect,
+  // useState
+} from "react";
 import {
   fireIcon,
-  topIcon,
-  gameIcon,
-  categoryIcon,
-  historyIcon,
+  // topIcon,
+  // gameIcon,
+  // categoryIcon,
+  // historyIcon,
   getIcon,
 } from "../components/Icons";
-import { getDataForHomeByCategories, getGames } from "../lib/api";
+import {
+  getDataForHomeByCategories,
+  // getGames
+} from "@/lib/api";
 
-import Layout from "../components/Layout";
-import { ADS_SLOT_ID, SITE_META, FEATURED_GAMES } from "../lib/constants";
+import Layout from "@/components/Layout";
+import {
+  ADS_SLOT_ID,
+  SITE_META,
+  // FEATURED_GAMES
+} from "@/lib/constants";
 import GameList from "../components/GameList";
-import PlayedList from "../components/PlayedList";
-import CategoryList from "../components/CategoryList";
+// import PlayedList from "../components/PlayedList";
+// import CategoryList from "../components/CategoryList";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import SectionTitle from "@/components/SectionTitle";
 import AdSense from "@/components/AdSense";
 import GameListItem from "@/components/GameListItem";
@@ -113,7 +124,9 @@ export default function Home({
                         ))}
                       </ul>
                     </div>
-                    {index === 0 ? <AdSense slot={ADS_SLOT_ID.HOME} /> : null}
+                    {index === 0 ? (
+                      <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} />
+                    ) : null}
                   </Fragment>
                 );
               })}

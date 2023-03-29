@@ -1,18 +1,22 @@
 import Link from "next/link";
 import Head from "next/head";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-import Layout from "../../components/Layout";
-import GameListItem from "../../components/GameListItem";
-import GameDetail from "../../components/GameDetail";
-import { sparkleIcon, homeIcon, fireIcon } from "../../components/Icons";
+import Layout from "@/components/Layout";
+import GameListItem from "@/components/GameListItem";
+import GameDetail from "@/components/GameDetail";
+import {
+  // sparkleIcon,
+  // homeIcon,
+  fireIcon,
+} from "@/components/Icons";
 
-import { getGameBySlug, getGames } from "../../lib/api";
-import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
+import { getGameBySlug, getGames } from "@/lib/api";
+import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
 import AdSense from "@/components/AdSense";
 import AdScript from "@/components/AdScript";
 
-// const Banner = dynamic(() => import("../../components/Banner"), {
+// const Banner = dynamic(() => import("@/components/Banner"), {
 //   loading: () => <div>Loading...</div>,
 // });
 
@@ -51,7 +55,7 @@ export default function Games({ game, categories, leftGames, rightGames, bottomG
         <div className="relative z-30 grow py-4 md:px-12 md:py-10 ">
           <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
-              <div className="hidden flex-row items-center px-4 pb-3 text-xs text-gray-600 xl:flex">
+              <div className="breadcrumb hidden flex-row items-center px-4 pb-3 text-xs text-gray-600 xl:flex">
                 <Link href={`/`}>Home</Link>
                 <span>
                   <svg className="h-5 w-5">

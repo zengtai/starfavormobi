@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import "../styles/globals.css";
-import "../styles/nprogress.css";
-import * as gtag from "../lib/gtag";
-import { GA_ID } from "../lib/constants";
+import "@/styles/globals.css";
+import "@/styles/nprogress.css";
+import * as gtag from "@/lib/gtag";
+import { GA_ID } from "@/lib/constants";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
