@@ -66,7 +66,7 @@ export default function Navbar({ navItems, isOpen }) {
                 className={`${isDetail ? `text-orange-400` : `text-white`} ml-2 text-base
                 font-bold xl:text-xl`}
               >
-                Starfavor
+                Game Center
               </span>
             </>
           </Link>

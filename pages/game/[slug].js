@@ -27,8 +27,8 @@ export default function Games({ game, categories, leftGames, rightGames, bottomG
         <Head>
           <title>{`${game.title} | Play ${game.title} on ${SITE_META.NAME}`}</title>
         </Head>
-        <AdScript />
-        <AdSense slot={ADS_SLOT_ID.DETAIL} key={`${game.slug}-${Math.random()}}`} />
+        {/* <AdScript />
+        <AdSense slot={ADS_SLOT_ID.DETAIL} key={`${game.slug}-${Math.random()}}`} /> */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"

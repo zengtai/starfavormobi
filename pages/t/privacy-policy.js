@@ -91,6 +91,25 @@ export default function PrivacyPolicy() {
               https://policies.google.com/technologies/ads
             </a>
           </p>
+          <h2 className="text-md my-3 font-bold">Our Advertising Partners</h2>
+          <p className="my-2">
+            Some of advertisers on our site may use cookies and web beacons. Our advertising
+            partners are listed below. Each of our advertising partners has their own Privacy Policy
+            for their policies on user data. For easier access, we hyperlinked to their Privacy
+            Policies below.
+          </p>
+          <ul>
+            <li>
+              <span>Google</span>
+              <a
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                rel="noreferrer"
+              >
+                https://policies.google.com/technologies/ads
+              </a>
+            </li>
+          </ul>
           <h2 className="text-md my-3 font-bold">Advertising Partners Privacy Policies</h2>
           <p className="my-2">
             You may consult this list to find the Privacy Policy for each of the advertising
@@ -188,6 +207,18 @@ export default function PrivacyPolicy() {
             children under the age of 13. If you think that your child provided this kind of
             information on our website, we strongly encourage you to contact us immediately and we
             will do our best efforts to promptly remove such information from our records.
+          </p>
+          <h2 className="text-md my-3 font-bold">Changes to This Privacy Policy</h2>
+          <p>
+            We may update our Privacy Policy from time to time. Thus, we advise you to review this
+            page periodically for any changes. We will notify you of any changes by posting the new
+            Privacy Policy on this page. These changes are effective immediately, after they are
+            posted on this page.
+          </p>
+          <h2 className="text-md my-3 font-bold">Contact Us</h2>
+          <p>
+            If you have any questions or suggestions about our Privacy Policy, do not hesitate to
+            contact us.
           </p>
         </div>
       </Layout>

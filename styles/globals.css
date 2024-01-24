@@ -24,3 +24,15 @@ body {
   /* background-size: 100%; */
   @apply relative flex min-h-screen flex-col bg-contain bg-no-repeat text-sm;
 }
+
+.about-us {
+  @apply m-4 rounded-lg bg-white p-4 shadow;
+}
+
+.about-us h2 {
+  @apply mb-2 text-lg font-bold text-orange-500;
+}
+
+.about-us p {
+  @apply mb-2 text-gray-700;
+}

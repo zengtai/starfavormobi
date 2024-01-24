@@ -1,3 +1,3 @@
-google.com, pub-9460854678318351, DIRECT, f08c47fec0942fa0
-# 20230227
-google.com, pub-8778441608054022, RESELLER, f08c47fec0942fa0
+google.com, pub-5454875279695201, RESELLER, f08c47fec0942fa0
+OWNERDOMAIN=bigkeyword.club
+anymanager.io, A5593, DIRECT

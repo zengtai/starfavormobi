@@ -65,7 +65,7 @@ export default function Home({
         <Head>
           <title>{`${SITE_META.NAME} | Play Free Games Online`}</title>
         </Head>
-        <AdScript />
+        {/* <AdScript /> */}
         <div className="relative z-30 grow">
           <div className="hidden">
             <svg
@@ -78,7 +78,7 @@ export default function Home({
             </svg>
           </div>
 
-          <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} />
+          {/* <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} /> */}
 
           <div className="xl:mx-8">
             <GameList
@@ -90,21 +90,6 @@ export default function Home({
               cols="3"
             />
           </div>
-
-          {/* <div className="xl:mx-8">
-            {playedGames ? (
-              <>
-                <PlayedList
-                  icon={historyIcon()}
-                  iconClassName="text-purple-400"
-                  title="Continue Playing"
-                  games={playedGames}
-                  isPriority
-                  cols="4"
-                />
-              </>
-            ) : null}
-          </div> */}
 
           <div className="grid gap-x-8 xl:mx-8 xl:mb-8 xl:grid-cols-3">
             {data
@@ -124,12 +109,26 @@ export default function Home({
                         ))}
                       </ul>
                     </div>
-                    {index === 0 ? (
+                    {/* {index === 0 ? (
                       <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} />
-                    ) : null}
+                    ) : null} */}
                   </Fragment>
                 );
               })}
+          </div>
+          <div className="about-us">
+            <h2 className="">About Game Center</h2>
+            <div className="content text-gray-600">
+              <p>Fun, free games at our Game Center!</p>
+              <p>If you have the time you can indulge in a world of games.</p>
+              <p>
+                At Game Center, we believe that everyone can have a great online gaming experience,
+                regardless of their financial situation. That&apos;s why we offer tons of free
+                games, ensuring that everyone has the opportunity to enjoy the fun and excitement of
+                gaming without breaking the bank.
+              </p>
+              <p>If you have the time you can indulge in the world of gaming.</p>
+            </div>
           </div>
         </div>
       </Layout>

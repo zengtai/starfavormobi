@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import { SITE_META } from "../../lib/constants";
+import Layout from "@/components/Layout";
+import { SITE_META } from "@lib/constants";
 // import { getGames } from "../../lib/api";
 // import categories from "@/data/categories.json";
 
@@ -9,11 +9,11 @@ export default function Terms() {
       <Layout title={`Terms of Use`}>
         <div className="p-4 text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px]">
           <h1 className="pb-3 text-2xl font-bold">Terms of Use</h1>
+          <p>Version 1.0</p>
           <p className="my-2">
-            The {SITE_META.NAME} website located at {SITE_META.URL} is a copyrighted work belonging
-            to {SITE_META.NAME}. Certain features of the Site may be subject to additional
-            guidelines, terms, or rules, which will be posted on the Site in connection with such
-            features.
+            The {SITE_META.NAME} is a copyrighted work belonging to {SITE_META.PARENT}. Certain
+            features of the Site may be subject to additional guidelines, terms, or rules, which
+            will be posted on the Site in connection with such features.
           </p>
           <p className="my-2">
             All such additional terms, guidelines, and rules are incorporated by reference into
@@ -115,6 +115,20 @@ export default function Terms() {
             <a href="https://policies.google.com/technologies/ads">
               https://policies.google.com/technologies/ads
             </a>
+          </p>
+          <p className="my-2">
+            <strong>Our Advertising Partners.</strong> Some of advertisers on our site may use
+            cookies and web beacons. Our advertising partners are listed below. Each of our
+            advertising partners has their own Privacy Policy for their policies on user data. For
+            easier access, we hyperlinked to their Privacy Policies below.
+            <ul>
+              <li>
+                <span>Google</span>
+                <a href="https://policies.google.com/technologies/ads">
+                  https://policies.google.com/technologies/ads
+                </a>
+              </li>
+            </ul>
           </p>
           <h2 className="text-md my-3 font-bold">Disclaimers</h2>
           <p className="my-2">
@@ -412,9 +426,6 @@ export default function Terms() {
             Marks without our prior written consent or the consent of such third party which may own
             the Marks.
           </p>
-          <h2 className="text-md my-3 font-bold">Contact Information</h2>
-          <p className="my-2">Address: Singapore</p>
-          <p className="my-2">Email: contact@{SITE_META.DOMAIN}</p>
         </div>
       </Layout>
     </>
