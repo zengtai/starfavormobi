@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { SITE_META } from "@lib/constants";
+import { SITE_META } from "@/lib/constants";
 // import { getGames } from "../../lib/api";
 // import categories from "@/data/categories.json";
 
