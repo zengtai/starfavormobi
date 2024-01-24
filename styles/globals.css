@@ -26,7 +26,7 @@ body {
 }
 
 .about-us {
-  @apply m-4 rounded-lg bg-white p-4 shadow;
+  @apply m-4 rounded-lg bg-white p-4 shadow xl:m-8;
 }
 
 .about-us h2 {

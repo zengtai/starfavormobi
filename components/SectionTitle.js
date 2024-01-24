@@ -6,9 +6,11 @@ export default function SectionTitle({ title, icon }) {
         <span className={`text-gray-700`}>{icon}</span>
         <span>{title}</span>
       </h2>
-      <Link className="mr-4 text-gray-600 xl:mr-6" href={`/category/${title.toLowerCase()}`}>
-        More
-      </Link>
+      {title !== "Popular This Week" ? (
+        <Link className="mr-4 text-gray-600 xl:mr-6" href={`/category/${title.toLowerCase()}`}>
+          More
+        </Link>
+      ) : null}
     </div>
   );
 }
