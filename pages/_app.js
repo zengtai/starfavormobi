@@ -57,6 +57,12 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      <Script
+        id="ats"
+        type="application/javascript"
+        src="//anymind360.com/js/13317/ats.js"
+        strategy="beforeInteractive"
+      />
       <Component {...pageProps} />
     </>
   );
