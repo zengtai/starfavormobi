@@ -59,6 +59,7 @@ export default function Home({
   //   }
   // }, [data]);
 
+  console.log(`data: `, data);
   return (
     <>
       <Layout>
@@ -93,22 +94,26 @@ export default function Home({
 
           <div className="grid gap-x-8 xl:mx-8 xl:mb-8 xl:grid-cols-3">
             {data
-              .sort((a, b) => (a.games.length < b.games.length ? 1 : -1))
+              // .sort((a, b) => (a.games.length < b.games.length ? 1 : -1))
               .map((i, index) => {
                 return (
-                  <Fragment key={i.category.name}>
-                    <div>
+                  <Fragment key={i.category.slug}>
+                    <section>
                       <SectionTitle
                         title={i.category.name}
                         icon={getIcon(i.category.slug, `text-gray-600`)}
                       />
                       <ul className="mx-4 my-3 grid grid-cols-4 gap-4 ">
                         {i.games.map((j) => (
-                          <GameListItem game={j} key={j.slug} />
+                          <GameListItem
+                            game={j}
+                            key={`${j.id}`}
+                            isPriority={index < 3 ? true : false}
+                          />
                           // <li key={j.id}>{j.title}</li>
                         ))}
                       </ul>
-                    </div>
+                    </section>
                     {/* {index === 0 ? (
                       <AdSense slot={ADS_SLOT_ID.HOME} key={`Home-${Math.random()}}`} />
                     ) : null} */}

@@ -7,6 +7,7 @@ import "@/styles/nprogress.css";
 import * as gtag from "@/lib/gtag";
 import { GA_ID } from "@/lib/constants";
 import Head from "next/head";
+import ATSManager from "@/components/ATSManager";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -57,12 +58,13 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <Script
+      <ATSManager />
+      {/* <Script
         id="ats"
         type="application/javascript"
         src="//anymind360.com/js/13317/ats.js"
         strategy="beforeInteractive"
-      />
+      /> */}
       <Component {...pageProps} />
     </>
   );

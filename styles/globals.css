@@ -25,6 +25,14 @@ body {
   @apply relative flex min-h-screen flex-col bg-contain bg-no-repeat text-sm;
 }
 
+.game-item {
+  @apply relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 lg:transition lg:delay-500 lg:duration-500 lg:ease-in-out lg:hover:origin-bottom lg:hover:scale-110 lg:hover:shadow-lg lg:hover:shadow-black/40;
+}
+
+.game-meta {
+  @apply absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold sm:flex lg:group-hover:bottom-0 lg:group-hover:bg-gradient-to-t lg:group-hover:from-black lg:group-hover:to-black/0;
+}
+
 .about-us {
   @apply m-4 rounded-lg bg-white p-4 shadow xl:m-8;
 }

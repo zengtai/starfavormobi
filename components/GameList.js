@@ -25,7 +25,7 @@ export default function GameList({
         >
           {games.map((game, index) => (
             <GameListItem
-              key={game.id}
+              key={game.slug}
               game={game}
               className={className}
               isPriority={index < 6 ? true : false}
