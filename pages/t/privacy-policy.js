@@ -6,8 +6,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Layout title={`Privacy Policy`}>
-        <div className="p-4 text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px]">
-          <h1 className="pb-3 text-2xl font-bold">Privacy Policy</h1>
+        <div className="page">
+          <h1>Privacy Policy</h1>
           <p className="my-2">
             At {SITE_META.NAME}, accessible from {SITE_META.URL}, one of our main priorities is the
             privacy of our visitors. This Privacy Policy document contains types of information that
@@ -23,11 +23,11 @@ export default function PrivacyPolicy() {
             {SITE_META.NAME}. This policy is not applicable to any information collected offline or
             via channels other than this website.
           </p>
-          <h2 className="text-md my-3 font-bold">Consent</h2>
+          <h2>Consent</h2>
           <p className="my-2">
             By using our website, you hereby consent to our Privacy Policy and agree to its terms.
           </p>
-          <h2 className="text-md my-3 font-bold">Information we collect</h2>
+          <h2>Information we collect</h2>
           <p className="my-2">
             The personal information that you are asked to provide, and the reasons why you are
             asked to provide it, will be made clear to you at the point we ask you to provide your
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
             When you register for an Account, we may ask for your contact information, including
             items such as name, company name, address, email address, and telephone number.
           </p>
-          <h2 className="text-md my-3 font-bold">How we use your information</h2>
+          <h2>How we use your information</h2>
           <p className="my-2">We use the information we collect in various ways, including to:</p>
           <ul className="my-2 ml-4 list-outside list-disc">
             <li>Provide, operate, and maintain our website</li>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
             <li>Send you emails</li>
             <li>Find and prevent fraud</li>
           </ul>
-          <h2 className="text-md my-3 font-bold">Log Files</h2>
+          <h2>Log Files</h2>
           <p className="my-2">
             {SITE_META.NAME} follows a standard procedure of using log files. These files log
             visitors when they visit websites. All hosting companies do this and a part of hosting
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
             analyzing trends, administering the site, tracking users’ movement on the website, and
             gathering demographic information.
           </p>
-          <h2 className="text-md my-3 font-bold">Cookies and Web Beacons</h2>
+          <h2>Cookies and Web Beacons</h2>
           <p className="my-2">
             Like any other website, {SITE_META.NAME} uses ‘cookies’. These cookies are used to store
             information including visitors’ preferences, and the pages on the website that the
@@ -80,7 +80,7 @@ export default function PrivacyPolicy() {
             For more general information on cookies, please read{" "}
             <a href="https://www.privacypolicyonline.com/what-are-cookies/">“What Are Cookies”</a>.
           </p>
-          <h2 className="text-md my-3 font-bold">Google DoubleClick DART Cookie</h2>
+          <h2>Google DoubleClick DART Cookie</h2>
           <p className="my-2">
             Google is one of a third-party vendor on our site. It also uses cookies, known as DART
             cookies, to serve ads to our site visitors based upon their visit to www.website.com and
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
               https://policies.google.com/technologies/ads
             </a>
           </p>
-          <h2 className="text-md my-3 font-bold">Our Advertising Partners</h2>
+          <h2>Our Advertising Partners</h2>
           <p className="my-2">
             Some of advertisers on our site may use cookies and web beacons. Our advertising
             partners are listed below. Each of our advertising partners has their own Privacy Policy
@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
               </a>
             </li>
           </ul>
-          <h2 className="text-md my-3 font-bold">Advertising Partners Privacy Policies</h2>
+          <h2>Advertising Partners Privacy Policies</h2>
           <p className="my-2">
             You may consult this list to find the Privacy Policy for each of the advertising
             partners of {SITE_META.NAME}.
@@ -127,7 +127,7 @@ export default function PrivacyPolicy() {
             Note that {SITE_META.NAME} has no access to or control over these cookies that are used
             by third-party advertisers.
           </p>
-          <h2 className="text-md my-3 font-bold">Third Party Privacy Policies</h2>
+          <h2>Third Party Privacy Policies</h2>
           <p className="my-2">
             {SITE_META.NAME}’s Privacy Policy does not apply to other advertisers or websites. Thus,
             we are advising you to consult the respective Privacy Policies of these third-party ad
@@ -139,9 +139,7 @@ export default function PrivacyPolicy() {
             detailed information about cookie management with specific web browsers, it can be found
             at the browsers’ respective websites.
           </p>
-          <h2 className="text-md my-3 font-bold">
-            CCPA Privacy Rights (Do Not Sell My Personal Information)
-          </h2>
+          <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
           <p className="my-2">
             Under the CCPA, among other rights, California consumers have the right to:
           </p>
@@ -161,7 +159,7 @@ export default function PrivacyPolicy() {
             If you make a request, we have one month to respond to you. If you would like to
             exercise any of these rights, please contact us.
           </p>
-          <h2 className="text-md my-3 font-bold">GDPR Data Protection Rights</h2>
+          <h2>GDPR Data Protection Rights</h2>
           <p className="my-2">
             We would like to make sure you are fully aware of all of your data protection rights.
             Every user is entitled to the following:
@@ -196,7 +194,7 @@ export default function PrivacyPolicy() {
             If you make a request, we have one month to respond to you. If you would like to
             exercise any of these rights, please contact us.
           </p>
-          <h2 className="text-md my-3 font-bold">Children’s Information</h2>
+          <h2>Children’s Information</h2>
           <p className="my-2">
             Another part of our priority is adding protection for children while using the internet.
             We encourage parents and guardians to observe, participate in, and/or monitor and guide
@@ -208,14 +206,14 @@ export default function PrivacyPolicy() {
             information on our website, we strongly encourage you to contact us immediately and we
             will do our best efforts to promptly remove such information from our records.
           </p>
-          <h2 className="text-md my-3 font-bold">Changes to This Privacy Policy</h2>
+          <h2>Changes to This Privacy Policy</h2>
           <p>
             We may update our Privacy Policy from time to time. Thus, we advise you to review this
             page periodically for any changes. We will notify you of any changes by posting the new
             Privacy Policy on this page. These changes are effective immediately, after they are
             posted on this page.
           </p>
-          <h2 className="text-md my-3 font-bold">Contact Us</h2>
+          <h2>Contact Us</h2>
           <p>
             If you have any questions or suggestions about our Privacy Policy, do not hesitate to
             contact us.

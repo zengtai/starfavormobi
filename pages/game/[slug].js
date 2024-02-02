@@ -13,8 +13,8 @@ import {
 
 import { getGameBySlug, getGames } from "@/lib/api";
 import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
-import AdSense from "@/components/AdSense";
-import AdScript from "@/components/AdScript";
+// import AdSense from "@/components/AdSense";
+// import AdScript from "@/components/AdScript";
 
 // const Banner = dynamic(() => import("@/components/Banner"), {
 //   loading: () => <div>Loading...</div>,

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { SITE_META } from "../lib/constants";
+import ATSManager from "./ATSManager";
 
 export default function Layout({ title, navItems, children, isOpen, type = "" }) {
   // console.log(list);
@@ -13,9 +14,7 @@ export default function Layout({ title, navItems, children, isOpen, type = "" })
           name="viewport"
           content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height"
         />
-        <title>
-          {title} | {SITE_META.NAME}
-        </title>
+        <title>{`${title} | ${SITE_META.NAME}`}</title>
       </Head>
       <div
         className={`${
@@ -32,6 +31,7 @@ export default function Layout({ title, navItems, children, isOpen, type = "" })
           <Footer />
         </div>
       </div>
+      <ATSManager />
     </>
   );
 }

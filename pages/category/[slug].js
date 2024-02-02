@@ -10,8 +10,8 @@ import Head from "next/head";
 import { SITE_META, ADS_SLOT_ID } from "@/lib/constants";
 
 // import dynamic from "next/dynamic";
-import AdSense from "@/components/AdSense";
-import AdScript from "@/components/AdScript";
+// import AdSense from "@/components/AdSense";
+// import AdScript from "@/components/AdScript";
 import CategoryTitle from "@/components/CategoryTitle";
 // const Banner = dynamic(() => import("@/components/Banner"), {
 //   loading: () => <div>Loading...</div>,

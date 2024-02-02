@@ -7,7 +7,6 @@ import "@/styles/nprogress.css";
 import * as gtag from "@/lib/gtag";
 import { GA_ID } from "@/lib/constants";
 import Head from "next/head";
-import ATSManager from "@/components/ATSManager";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -58,7 +57,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <ATSManager />
+
       {/* <Script
         id="ats"
         type="application/javascript"

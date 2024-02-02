@@ -7,8 +7,8 @@ export default function Terms() {
   return (
     <>
       <Layout title={`Terms of Use`}>
-        <div className="p-4 text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px]">
-          <h1 className="pb-3 text-2xl font-bold">Terms of Use</h1>
+        <div className="page">
+          <h1>Terms of Use</h1>
           <p>Version 1.0</p>
           <p className="my-2">
             The {SITE_META.NAME} is a copyrighted work belonging to {SITE_META.PARENT}. Certain
@@ -30,7 +30,7 @@ export default function Terms() {
             These terms require the use of arbitration Section 10.2 on an individual basis to
             resolve disputes and also limit the remedies available to you in the event of a dispute.
           </p>
-          <h2 className="text-md my-3 font-bold">Access to the Site</h2>
+          <h2>Access to the Site</h2>
           <p className="my-2">
             <strong>Subject to these Terms.</strong> Company grants you a non-transferable,
             non-exclusive, revocable, limited license to access the Site solely for your own
@@ -66,7 +66,7 @@ export default function Terms() {
             intellectual property rights, except for the limited access rights expressed in Section
             2.1. Company and its suppliers reserve all rights not granted in these Terms.
           </p>
-          <h2 className="text-md my-3 font-bold">Third-Party Links &amp; Ads; Other Users</h2>
+          <h2>Third-Party Links &amp; Ads; Other Users</h2>
           <p className="my-2">
             <strong>Third-Party Links &amp; Ads.</strong> The Site may contain links to third-party
             websites and services, and/or display advertisements for third-parties.&nbsp; Such
@@ -121,16 +121,16 @@ export default function Terms() {
             cookies and web beacons. Our advertising partners are listed below. Each of our
             advertising partners has their own Privacy Policy for their policies on user data. For
             easier access, we hyperlinked to their Privacy Policies below.
-            <ul>
-              <li>
-                <span>Google</span>
-                <a href="https://policies.google.com/technologies/ads">
-                  https://policies.google.com/technologies/ads
-                </a>
-              </li>
-            </ul>
           </p>
-          <h2 className="text-md my-3 font-bold">Disclaimers</h2>
+          <ul>
+            <li>
+              <span>Google</span>
+              <a href="https://policies.google.com/technologies/ads">
+                https://policies.google.com/technologies/ads
+              </a>
+            </li>
+          </ul>
+          <h2>Disclaimers</h2>
           <p className="my-2">
             The site is provided on an “as-is” and “as available” basis, and company and our
             suppliers expressly disclaim any and all warranties and conditions of any kind, whether
@@ -148,7 +148,7 @@ export default function Terms() {
             exclusion may not apply to you.&nbsp; Some jurisdictions do not allow limitations on how
             long an implied warranty lasts, so the above limitation may not apply to you.
           </p>
-          <h2 className="text-md my-3 font-bold">Limitation on Liability</h2>
+          <h2>Limitation on Liability</h2>
           <p className="my-2">
             To the maximum extent permitted by law, in no event shall company or our suppliers be
             liable to you or any third-party for any lost profits, lost data, costs of procurement
@@ -184,7 +184,7 @@ export default function Terms() {
             Terms are terminated, the following provisions of these Terms will remain in effect:
             Sections 2 through 2.5, Section 3 and Sections 4 through 10.
           </p>
-          <h2 className="text-md my-3 font-bold">Copyright Policy.</h2>
+          <h2>Copyright Policy.</h2>
           <p className="my-2">
             Company respects the intellectual property of others and asks that users of our Site do
             the same.&nbsp; In connection with our Site, we have adopted and implemented a policy
@@ -223,7 +223,7 @@ export default function Terms() {
             any damages, costs and attorney’s fees incurred by us in connection with the written
             notification and allegation of copyright infringement.
           </p>
-          <h2 className="text-md my-3 font-bold">General</h2>
+          <h2>General</h2>
           <p className="my-2">
             These Terms are subject to occasional revision, and if we make any substantial changes,
             we may notify you by sending you an e-mail to the last e-mail address you provided to us

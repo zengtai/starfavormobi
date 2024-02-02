@@ -44,3 +44,22 @@ body {
 .about-us p {
   @apply mb-2 text-gray-700;
 }
+
+.page {
+  @apply p-4 text-sm text-gray-700 md:p-8 xl:mx-auto xl:w-[1120px];
+}
+
+.page h1 {
+  @apply pb-3 text-2xl font-bold;
+}
+
+.page h2 {
+  @apply my-3 text-base font-bold;
+}
+.page h3 {
+  @apply my-3 font-bold;
+}
+
+.page a {
+  @apply break-words underline;
+}
