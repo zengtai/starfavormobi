@@ -30,6 +30,6 @@ const ATSManager = () => {
       }
     };
   }, []);
-  return <Script src="https://anymind360.com/js/13317/ats.ats.js" strategy="beforeInteractive" />;
+  return <Script src="https://anymind360.com/js/13317/ats.js" strategy="beforeInteractive" />;
 };
 export default ATSManager;
