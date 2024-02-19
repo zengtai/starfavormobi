@@ -16,7 +16,8 @@ module.exports = {
     // You can, for example, get the latest git commit hash here
     // return "20220517";
     // return "20220524";
-    return "20240202";
+    // return "20240202";
+    return "20240219";
     // return "20220531";
   },
 
